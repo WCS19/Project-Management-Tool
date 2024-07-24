@@ -1,10 +1,13 @@
 # Project-Management-Tool
 
-Code Architecture
+## Code Architecture
+
+```
 project_management_tool/
 │
 ├── backend/
 │   ├── __init__.py
+│   ├── init.py
 │   ├── auth.py
 │   └── requirements.txt
 │
@@ -16,3 +19,4 @@ project_management_tool/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
