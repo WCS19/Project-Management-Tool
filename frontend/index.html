@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Project Management Tool</h1>
+        <div id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="window.location.href='register.html'">Register</button>
+        </div>
+        <div id="task-form" style="display: none;">
+            <h2>Tasks</h2>
+            <input type="text" id="task-title" placeholder="Task Title">
+            <input type="text" id="task-description" placeholder="Task Description">
+            <button onclick="createTask()">Create Task</button>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

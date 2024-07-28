@@ -1,0 +1,3 @@
+runtime: nodejs14
+instance_class: E2
+entrypoint: serve -s .
