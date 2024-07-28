@@ -24,8 +24,8 @@ def create_app():
     app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Suppress deprecation warning
 
-    # Enable CORS for all routes and origins
-    CORS(app)
+    # Enable CORS for specific origins
+    CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins for development purposes
 
     db.init_app(app)
     migrate.init_app(app, db)

@@ -1,22 +1,91 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
 }
 
-#app {
-    max-width: 600px;
-    margin: 20px auto;
+.title {
+    text-align: center;
+}
+
+#login-form, #register-form {
+    max-width: 300px;
+    margin: 50px auto;
     padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-input, button {
+#task-container {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#task-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.task-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="text"] {
     display: block;
     width: 100%;
+    padding: 8px;
     margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
     padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.collapsible {
+    display: none;
+}
+
+.collapsible-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.collapsible-header:hover {
+    background-color: #0056b3;
 }

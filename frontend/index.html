@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>Project Management Tool</h1>
+        <h1 class="title">Project Management Tool</h1>
         <div id="login-form">
             <h2>Login</h2>
             <input type="text" id="username" placeholder="Username">
@@ -16,12 +16,21 @@
             <button onclick="login()">Login</button>
             <button onclick="window.location.href='register.html'">Register</button>
         </div>
-        <div id="task-form" style="display: none;">
+        <div id="task-container" style="display: none;">
             <h2>Tasks</h2>
-            <input type="text" id="task-title" placeholder="Task Title">
-            <input type="text" id="task-description" placeholder="Task Description">
-            <button onclick="createTask()">Create Task</button>
-            <ul id="task-list"></ul>
+            <div id="task-list"></div>
+            <div>
+                <input type="text" id="task-title" placeholder="Task Title">
+                <input type="text" id="task-description" placeholder="Task Description">
+                <button onclick="createTask()">Create Task</button>
+            </div>
+            <div id="delete-task-container">
+                <h3 class="collapsible-header" onclick="toggleDeleteTaskList()" style="cursor: pointer;">All Tasks</h3>
+                <ul id="delete-task-list" class="collapsible">
+                    <!-- Task list will be appended here -->
+                </ul>
+                <button onclick="deleteSelectedTasks()">Delete Selected Tasks</button>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
