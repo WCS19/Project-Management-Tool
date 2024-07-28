@@ -5,7 +5,6 @@ from backend.init import db
 from backend.auth import register_auth_routes
 
 def register_routes(app):
-
     @app.route('/')
     def index():
         return jsonify({'message': 'Welcome to the API'})
@@ -47,4 +46,3 @@ def register_routes(app):
 
     # Register auth routes
     register_auth_routes(app)
-

@@ -171,3 +171,7 @@ cython_debug/
 # Ignore local database created
 project_management.db
 
+#Ignore credentials for https serving
+key.pem
+cert.pem
+
