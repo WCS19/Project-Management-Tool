@@ -12,6 +12,11 @@ project_management_tool/
 │   └── requirements.txt
 │
 ├── frontend/
+│   ├── app.js
+│   ├── app.yaml
+│   ├── index.html
+│   ├── register.html
+│   └── styles.css
 │
 ├── utils/
 │   └── generate_credentials.py
