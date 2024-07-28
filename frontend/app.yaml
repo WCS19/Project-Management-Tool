@@ -1,3 +1,5 @@
-runtime: nodejs14
-instance_class: E2
-entrypoint: serve -s .
+#Future deployment configuration for GCP deployment
+
+# runtime: nodejs14
+# instance_class: E2
+# entrypoint: serve -s .

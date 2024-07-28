@@ -45,6 +45,9 @@ project_management_tool/
 │   ├── __init__.py
 │   ├── init.py
 │   ├── auth.py
+│   ├── models.py
+│   ├── routes.py
+│   ├── run.py
 │   └── requirements.txt
 │
 ├── frontend/
