@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 from dotenv import load_dotenv
+from typing import Any
 
 # Load environment variables from .env file
 load_dotenv()
@@ -16,7 +17,7 @@ bcrypt = Bcrypt()
 jwt = JWTManager()
 
 
-def create_app():
+def create_app() -> Flask:
     app = Flask(__name__)
 
     # Set configuration from environment variables

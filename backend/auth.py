@@ -1,14 +1,15 @@
-from flask import request, jsonify
+from typing import Any, Dict, Union, Tuple
+from flask import request, jsonify, Flask, Response
 from flask_jwt_extended import create_access_token
 from backend.init import db, bcrypt
 from backend.models import User
 
 
-def register_auth_routes(app):
+def register_auth_routes(app: Flask) -> None:
     @app.route("/register", methods=["POST", "OPTIONS"])
-    def register():
+    def register() -> Union[Response, Tuple[Response, int]]:
         if request.method == "OPTIONS":
-            return "", 204
+            return Response(status=204)
 
         data = request.get_json()
         hashed_password = bcrypt.generate_password_hash(data["password"]).decode(
@@ -22,9 +23,9 @@ def register_auth_routes(app):
         return jsonify({"message": "User registered successfully"})
 
     @app.route("/login", methods=["POST", "OPTIONS"])
-    def login():
+    def login() -> Union[Response, Tuple[Response, int]]:
         if request.method == "OPTIONS":
-            return "", 204
+            return Response(status=204)
 
         data = request.get_json()
         user = User.query.filter_by(username=data["username"]).first()
