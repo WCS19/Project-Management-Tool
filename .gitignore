@@ -175,3 +175,6 @@ project_management.db
 key.pem
 cert.pem
 
+# Ignore tests folder for now
+tests/
+
