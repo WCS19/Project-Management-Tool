@@ -15,17 +15,20 @@ migrate = Migrate()
 bcrypt = Bcrypt()
 jwt = JWTManager()
 
+
 def create_app():
     app = Flask(__name__)
 
     # Set configuration from environment variables
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
-    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-    app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Suppress deprecation warning
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("SQLALCHEMY_DATABASE_URI")
+    app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+    app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  # Suppress deprecation warning
 
     # Enable CORS for specific origins
-    CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins for development purposes
+    CORS(
+        app, resources={r"/*": {"origins": "*"}}
+    )  # Allow all origins for development purposes
 
     db.init_app(app)
     migrate.init_app(app, db)
@@ -35,8 +38,10 @@ def create_app():
     with app.app_context():
         # Import models to register them with SQLAlchemy
         import backend.models
+
         # Register blueprints or routes
         from backend.routes import register_routes
+
         register_routes(app)
         db.create_all()
 
