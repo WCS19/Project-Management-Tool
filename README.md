@@ -21,25 +21,38 @@ The purpose of this project is to learn and create a Flask web application that 
 
 #### Current Stack:
 
-- **Flask**
-- **Flask-SQLAlchemy**
-- **Flask-Migrate**
-- **Flask-Bcrypt**
-- **Flask-JWT-Extended**
-- **Werkzeug**
-- **SQLAlchemy**
-- **Flask-Cors**
 - **gunicorn**
 - **gevent**
+- **Flask**
+- **Flask-Bcrypt**
+- **Flask-Cors**
+- **Flask-JWT-Extended**
+- **Flask-Migrate**
+- **Flask-SQLAlchemy**
 - **python-dotenv**
+- **SQLAlchemy**
+- **Werkzeug**
 
 
-This project showcases the integration of various Flask extensions and tools to build a comprehensive web application. It serves as an educational journey to learn about the Flask framework and its ecosystem.
+This project showcases the integration of various Flask extensions and tools to build a simple web application. It serves as an educational journey to learn about the Flask framework and its ecosystem.
+
+## Type Annotations and Static Type Checking
+
+This project uses type annotations to improve code quality and readability. Python's `typing` module is used to annotate types in the codebase, and `mypy` is used for static type checking to ensure type correctness.
+
+### To See Examples of Type Annotations See `backend` Subdirectory Files
+
+## Continuous Integration Workflow
+The project uses GitHub Actions for continuous integration to ensure code quality through linting and type checking.
 
 ## Code Architecture
 
 ```
 project_management_tool/
+│
+├── .github/
+│   ├── workflows
+│   └── python-app.yml
 │
 ├── backend/
 │   ├── __init__.py
@@ -61,6 +74,8 @@ project_management_tool/
 │   └── generate_credentials.py
 │
 ├── .gitignore
+├── .pre-commit-config.yaml
 ├── LICENSE
+├── mypy.ini
 └── README.md
 ```
